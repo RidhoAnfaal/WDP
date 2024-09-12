@@ -1,7 +1,6 @@
 <h1 align="center">Hi 👋, I'm Ridho Anfa'al</h1>
 <h3 align="center">This repository use for web design and programming course</h3>
 
-<h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
 
