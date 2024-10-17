@@ -8,15 +8,16 @@ if (isset($_FILES['file'])) {
     @$file_ext = strtolower("" . end(explode('.', $_FILES['file']['name'])) . "");
     $extensions = array("pdf", "doc", "docx", "txt");
 
+
     if (in_array($file_ext, $extensions) === false) {
-        $errors[] = "Ekstensi file yang diizinkan adalah PDF, DOC, DOCX, atau TXT";
+        $errors[] = "Ekstensi file yang diizinkan adalah PDF, DOC, DOCX, dan TXT.";
     }
 
     if ($file_size > 2097152) {
         $errors[] = 'Ukuran file tidak boleh lebih dari 2 MB';
     }
 
-    if (empty($errors) === true) {
+    if (empty($errors) == true) {
         move_uploaded_file($file_tmp, "documents/" . $file_name);
         echo "File berhasil diunggah.";
     } else {
