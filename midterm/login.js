@@ -4,17 +4,17 @@ $(document).ready(function() {
         let username = $('#username').val();
         let password = $('#password').val();
 
-        // Clear previous error messages
+        // clear err
         $('#username-error').text('');
         $('#password-error').text('');
 
-        // Username validation
+        // user val
         if (username === '') {
             $('#username-error').text('Must be filled.');
             valid = false;
         }
 
-        // Password validation
+        // pw val
         if (password === '') {
             $('#password-error').text('Must be filled.');
             valid = false;
@@ -27,7 +27,7 @@ $(document).ready(function() {
         }
 
         if (!valid) {
-            e.preventDefault(); // Prevent form submission
+            e.preventDefault(); 
         }
     });
 });

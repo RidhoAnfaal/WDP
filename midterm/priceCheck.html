@@ -3,42 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laundry XYZ - Price Check</title>
+    <title>LAUNDRY BERSIH - Price Check</title>
+    <link rel="stylesheet" href="stylePriceCheck.css" />
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <style>
-      .navbar {
-        background-color: #c0c0c0;
-      }
-      .navbar a {
-        color: white;
-      }
-      .footer {
-        background-color: #333b3e;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-      }
-      .price-check-section {
-        margin-top: 20px;
-        padding: 20px;
-        background-color: #f7f7f7;
-        border-radius: 5px;
-      }
-      .price-check-section h2 {
-        margin-bottom: 20px;
-      }
-    </style>
   </head>
   <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">Laundry XYZ</a>
+      <a class="navbar-brand" href="#">LAUNDRY BERSIH</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -59,13 +33,12 @@
             <a class="nav-link" href="priceCheck.html">Price Check</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <a class="nav-link" href="logout.php">Logout</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <!-- Price Check Section -->
     <div class="container price-check-section">
       <h2>Input to Check The Price</h2>
       <form id="priceCheckForm">
@@ -120,49 +93,9 @@
       <div id="result3" style="margin-top: 20px"></div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">Created by Ridho &copy;2024</div>
 
-    <script>
-      function calculatePrice() {
-        // Get input values
-        const weight = parseInt(document.getElementById("weight").value);
-        const servicePricePerKg = parseInt(
-          document.getElementById("service").value
-        );
-        const typeAdditionalFeePerKg = parseInt(
-          document.getElementById("type").value
-        );
-        const discountRate = parseFloat(
-          document.getElementById("discount").value
-        );
-
-        // Calculate base price
-        let basePrice = weight * servicePricePerKg;
-
-        // Add additional cost for express service
-        let additionalCost = weight * typeAdditionalFeePerKg;
-
-        // Calculate total price before discount
-        let totalPrice = basePrice + additionalCost;
-
-        // Apply discount if applicable
-        let discount = totalPrice * discountRate;
-        let finalPrice = totalPrice - discount;
-
-        // Display result
-        document.getElementById("result1").innerHTML = `
-          <h5>Total Price: ${totalPrice}</h5>
-        `;
-        document.getElementById("result2").innerHTML = `
-          <h5>Discount: ${discount}</h5>
-        `;
-        document.getElementById("result3").innerHTML = `
-          <h5>Total Payment: ${finalPrice}</h5>
-        `;
-      }
-    </script>
-
+    <script src="priceCheck.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
