@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($username === $valid_username && $password === $valid_password) {
         // set session
         $_SESSION['username'] = $username;
-        header("Location: home.html"); // home page
+        header("Location: /midterm/HomePageSection/home.html"); // home page
         exit();
     } else {
         echo "Invalid username or password.";
