@@ -52,7 +52,7 @@
                             <?= $row["no_telp"] ?>
                         </td>
                         <td>
-                            <a class="btn btn-primary" href="edit.php?id=">Edit</a>
+                            <a class="btn btn-primary" href="edit.php?id=<?= $row["id"] ?>">Edit</a>
                             <a class='btn btn-danger' href='#' data-toggel='modal'
                                 data-target='#hapusModal<?= $row["id"] ?>'>Hapus</a>
                         </td>
