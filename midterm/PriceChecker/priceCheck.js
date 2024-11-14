@@ -1,5 +1,15 @@
 function calculatePrice() {
-    const weight = parseInt(document.getElementById("weight").value);
+    let countTotalLaundry = localStorage.getItem('countTotalLaundry');
+    let numberTotalLaundry = countTotalLaundry ? parseInt(countTotalLaundry, 10) : 0;
+
+    let weight = parseInt(document.getElementById("weight").value);
+
+    if (numberTotalLaundry > 5) {
+      if (weight > 2) {
+        weight = weight - 2
+      }
+    }
+    
     const servicePricePerKg = parseInt(
       document.getElementById("service").value
     );
@@ -28,4 +38,12 @@ function calculatePrice() {
     document.getElementById("result3").innerHTML = `
       <h5 style="color: red;">Total Payment is ${finalPrice}</h5>
     `;
+
+    if (countTotalLaundry) {
+      countTotalLaundry = parseInt(countTotalLaundry, 10) + 1;
+    } else {
+      countTotalLaundry = 1;
+    }
+
+    localStorage.setItem('countTotalLaundry', countTotalLaundry.toString());
 }
