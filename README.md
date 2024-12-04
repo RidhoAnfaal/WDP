@@ -2,7 +2,7 @@
 
 ###
 
-<img align="right" height="150" src="95gcf7.gif"  />
+<img align="right" height="150" src="vegeta.gif"  />
 
 ###
 
